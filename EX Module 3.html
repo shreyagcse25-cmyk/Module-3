@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>Grand Plaza Hotel</title>
+    <link rel="stylesheet" href="Web final.css">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+   </head>
+
+<body>
+
+    <h1>Grand Plaza Hotel</h1>
+    <img src="C:\Users\hp\Downloads\Hotel photo.jpeg">
+    <hr>
+
+    <!-- Room 1 -->
+    <div class="room-card">
+        <div class="info">
+            <h3>Room: Standard Cozy Room</h3>
+            <img src="C:\Users\hp\Downloads\standard cozy room.jpeg">
+            <p>A comfortable and efficient space perfect for solo travelers.</p>
+            <ul>
+                <li>Free Wi-Fi</li>
+                <li>Work Desk</li>
+                <li>Queen Bed</li>
+            </ul>
+            <p><b>Price: ₹2,500 per night</b></p>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Room 2 -->
+    <div class="room-card">
+        <div class="info">
+            <h3>Room: Deluxe Executive Suite</h3>
+            <img src="C:\Users\hp\Downloads\deluxe room.jpeg">
+            <p>Spacious living with elegance.</p>
+            <ul>
+                <li>Wi-Fi</li>
+                <li>Breakfast</li>
+                <li>King Bed</li>
+            </ul>
+            <p><b>Price: ₹5,000 per night</b></p>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Room 3 -->
+    <div class="room-card">
+        <div class="info">
+            <h3>Room: Presidential Penthouse</h3>
+            <img src="C:\Users\hp\Downloads\presidential suite.jpeg">
+            <p>Luxury with terrace.</p>
+            <ul>
+                <li>Jacuzzi</li>
+                <li>Ocean View</li>
+                <li>Limousine</li>
+            </ul>
+            <p><b>Price: ₹15,000 per night</b></p>
+        </div>
+    </div>
+
+    <hr>
+
+       <div class="booking-form">
+        <h3>Book Your Stay</h3>
+<img src= "C:\Users\hp\Downloads\book stay.png">
+
+       <form>
+            <label>Select Room Type:</label>
+            <select id="room" required>
+                <option value="">Select</option>
+                <option value="2500">Standard Cozy Room (₹2,500)</option>
+                <option value="5000">Deluxe Executive Suite (₹5,000)</option>
+                <option value="15000">Presidential Penthouse (₹15,000)</option>
+            </select>
+            
+            <label>Check-in Date:</label>
+            <input type="date" required>
+            
+            <label>Check-out Date:</label>
+            <input type="date" required>
+            
+            <label>Number of Nights:</label>
+            <input type="number" id="days" placeholder="0" min="1" required>
+
+            <label>Guest Name:</label>
+            <input type="text" placeholder="Enter Full Name" required>
+
+            <h3>Total Price: ₹<span id="total">0</span></h3>
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+
+    <script>
+
+        function calc() {
+
+            var price = document.getElementById("room").value;
+            var nights = document.getElementById("days").value;
+
+            if (price != "" && nights != "") {
+                document.getElementById("total").innerHTML = price * nights;
+            }
+        }
+
+        document.getElementById("room").onchange = calc;
+        document.getElementById("days").oninput = calc;
+
+    </script>
+
+</body>
+</html>
